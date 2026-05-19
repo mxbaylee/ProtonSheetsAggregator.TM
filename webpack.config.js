@@ -91,8 +91,8 @@ module.exports = {
 // @match        ${pkg.config.match}
 // @allFrames    true
 // @icon         ${pkg.config.icon}
-// @updateURL    https://github.com/bschmeisser/${pkg.name}/releases/latest/download/bundle.user.js
-// @downloadURL  https://github.com/bschmeisser/${pkg.name}/releases/latest/download/bundle.user.js
+// @updateURL    https://github.com/mxbaylee/${pkg.name}/releases/latest/download/bundle.user.js
+// @downloadURL  https://github.com/mxbaylee/${pkg.name}/releases/latest/download/bundle.user.js
 // @grant        none
 // ==/UserScript==
 `,
