@@ -2,6 +2,8 @@
 
 A TamperMonkey userscript that adds an aggregation bar to [Proton Sheets](https://docs-editor.proton.me), showing sum, average, min, max, and count for selected cells.
 
+![Demo](assets/demo.gif)
+
 ## 🚀 Install
 
 1. Install [TamperMonkey](https://www.tampermonkey.net/)
