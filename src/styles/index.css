@@ -1,0 +1,23 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.proton-aggregator-root {
+  all: initial;
+}
+
+.proton-aggregation-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 9999;
+  background: #1c1c1c;
+  color: #fff;
+  padding: 4px 12px;
+  font-size: 12px;
+  font-family: sans-serif;
+  display: flex;
+  gap: 16px;
+  align-items: center;
+}
