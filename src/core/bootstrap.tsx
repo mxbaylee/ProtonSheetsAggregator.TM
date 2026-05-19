@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { AggregationBar } from '../components/AggregationBar';
-import '../styles/index.css';
+import './bootstrap.css';
 
 const ROOT_CLASS = 'proton-aggregator-root';
 const POLL_INTERVAL_MS = 1000;
