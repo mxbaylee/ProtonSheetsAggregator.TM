@@ -20,7 +20,7 @@ npm run build       # production build
 
 Load `dist/bundle.user.js` directly in TamperMonkey during development.
 
-## ⚙️ CI / Releases
+## 📦 CI / Releases
 
 - Every push runs tests and builds the artifact 🧪
 - The built `bundle.user.js` is uploaded as a workflow artifact on every commit
