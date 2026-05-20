@@ -7,7 +7,7 @@ A TamperMonkey userscript that adds an aggregation bar to [Proton Sheets](https:
 ## 🚀 Install
 
 1. Install [TamperMonkey](https://www.tampermonkey.net/)
-2. Click the [latest release](../../releases/latest/download/bundle.user.js) to install
+2. Click the [latest release](https://github.com/mxbaylee/ProtonSheetsAggregator.TM/releases/tag/latest) to install
 
 ## 🛠️ Development
 

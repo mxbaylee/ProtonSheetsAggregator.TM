@@ -4,12 +4,16 @@ const TerserPlugin = require('terser-webpack-plugin');
 const { execSync } = require('child_process');
 const pkg = require('./package.json');
 
-function getGitVersion() {
+function getVersion() {
+  const epoch = Math.floor(Date.now() / 1000);
+
   try {
-    return execSync('git describe --tags --abbrev=0', {
+    // If you use git tags, you can keep this, but ensure it returns a valid structure
+    const tag = execSync('git describe --tags --abbrev=0', {
       encoding: 'utf8',
       stdio: ['pipe', 'pipe', 'pipe']
     }).trim();
+    return `${epoch}.${tag}`;
   } catch {
     try {
       const sha = execSync('git rev-parse --short HEAD', {
@@ -20,14 +24,17 @@ function getGitVersion() {
         encoding: 'utf8',
         stdio: ['pipe', 'pipe', 'pipe']
       }).trim();
-      return `${sha}-${branch}`;
+
+      // Returns format: 1716217210.8ed86b1-main
+      // Tampermonkey evaluates the number up to the dot first, ensuring clean sorting
+      return `${epoch}.${branch}.${sha}`;
     } catch {
-      return 'development';
+      return `${epoch}.development`;
     }
   }
 }
 
-const version = getGitVersion();
+const version = getVersion();
 const isProd = process.argv.includes('production');
 
 module.exports = {
@@ -91,8 +98,8 @@ module.exports = {
 // @match        ${pkg.config.match}
 // @allFrames    true
 // @icon         ${pkg.config.icon}
-// @updateURL    https://github.com/mxbaylee/${pkg.name}/releases/latest/download/bundle.user.js
-// @downloadURL  https://github.com/mxbaylee/${pkg.name}/releases/latest/download/bundle.user.js
+// @updateURL    https://github.com/mxbaylee/${pkg.name}/releases/download/latest/bundle.user.js
+// @downloadURL  https://github.com/mxbaylee/${pkg.name}/releases/download/latest/bundle.user.js
 // @grant        none
 // ==/UserScript==
 `,
